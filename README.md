@@ -1,4 +1,4 @@
-# Ella's Field Trip and Report Writing Repo
+# Field Trip and Report Writing Repo
 
 This repository contains the completed field trip report for Korle-Bu Teaching Hospital (Emmanuella Nana Ama Weir) and a minimal working prototype (Flask backend + static frontend) that demonstrates the procurement request workflow.
 
@@ -13,5 +13,6 @@ Quick start (local):
 2. cd backend && pip install -r requirements.txt
 3. python app.py  # runs server on http://127.0.0.1:5000
 4. Open frontend/index.html in your browser to use the demo UI (it calls the backend at http://127.0.0.1:5000)
+
 
 NOTE: This is a minimal prototype for demonstration. For production, follow the report's recommendations: use production-grade database, TLS, reverse proxy, and proper authentication.
