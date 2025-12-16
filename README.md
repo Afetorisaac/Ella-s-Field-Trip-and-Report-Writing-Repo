@@ -1,6 +1,6 @@
 # Field Trip and Report Writing Repo
 
-This repository contains the completed field trip report for Korle-Bu Teaching Hospital (Emmanuella Nana Ama Weir) and a minimal working prototype (Flask backend + static frontend) that demonstrates the procurement request workflow.
+This repository contains the completed field trip report for Korle-Bu Teaching Hospital and a minimal working prototype (Flask backend + static frontend) that demonstrates the procurement request workflow.
 
 Structure:
 - report1_complete.md — completed field trip report (full document)
@@ -16,3 +16,4 @@ Quick start (local):
 
 
 NOTE: This is a minimal prototype for demonstration. For production, follow the report's recommendations: use production-grade database, TLS, reverse proxy, and proper authentication.
+
