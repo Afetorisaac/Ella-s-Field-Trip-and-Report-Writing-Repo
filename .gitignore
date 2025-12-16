@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+procurement.db
+.env
+venv/
+node_modules/
