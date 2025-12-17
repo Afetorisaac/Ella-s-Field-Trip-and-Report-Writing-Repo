@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant User
+  participant App as "Procurement App"
+  participant DB as "MongoDB"
+  participant HIS as "HIS (FHIR)"
+  participant Email as "Mail Relay"
+  User->>App: Submit procurement request
+  App->>DB: Persist request
+  App->>HIS: (optional) Resolve department identifier
+  App-->>User: Ack receipt
+  DeptHead->>App: Review & approve
+  App->>Procurement: Notify procurement officer
+  Procurement->>App: Create PO
+  App->>Email: Send notifications

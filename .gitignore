@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 procurement.db
+ella.db
 .env
 venv/
 node_modules/
