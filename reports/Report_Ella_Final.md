@@ -1,53 +1,199 @@
-FIELD TRIP REPORT TO KORLE-BU TEACHING HOSPITAL
+# FIELD TRIP REPORT TO KORLEBU TEACHING HOSPITAL.
 
-FOR THE PROGRAMME OF STUDY OF BSc COMPUTER SCIENCE (CYBERSECURITY OPTION)  
-OF THE COMPUTER SCIENCE DEPARTMENT  
+FOR THE PROGRAMME OF STUDY OF BSc COMPUTER SCIENCE (CYBERSECURITY OPTION)
+OF THE COMPUTER SCIENCE DEPARTMENT
 OF GHANA COMMUNICATION TECHNOLOGY UNIVERSITY
+BY
+INDEX NO: 1704895585
+NAME: EMMANNUELLA NANA AMA WEIR
 
-BY  
-INDEX NO: 1704895585  
-NAME: EMMANUELLA NANA AMA WEIR
-
-LECTURER: DR. MARTIN MABEIFAM UJAKPA.  
+LECTURER: DR. MARTIN MABEIFAM UJAKPA.
 NOVEMBER 2025.
 
+Abstract
+This report documents a field trip to Korle‑Bu Teaching Hospital carried out as part of the BSc Computer Science (Cybersecurity option) programme. The primary objective was to observe and analyse the hospital's IT/Health Information Systems operations, identify operational and cybersecurity challenges, and propose a practicable, computerised procurement automation solution to reduce delays and improve auditability. The study used direct observation, interviews with IT personnel, and a brief review of operational workflows. Findings show that delays in procurement, manual approval bottlenecks, and limited interoperability with hospital systems reduce operational efficiency and can impact patient care. The proposed solution is a secure procurement automation platform (production design: Node.js + Vue + MongoDB with FHIR integration; classroom demo: Flask + SQLite) that prioritises role‑based access, audit trails, encryption, and staged deployment. The report includes system specifications, development and testing plans, and recommendations for pilot rollout and future enhancements.
+
+Table Of Contents
+1.1. INTRODUCTION	1
+1.2 INDUSTRY: Health	1
+1.3 COMPANY: Korle-bu Teaching Hospital	2
+1.3.1 DEPARTMENT: It/Health Information Systems	2
+1.4 Operations, Activities and Resources	2
+1.5 Operational Effectiveness and Efficiencies of Korle-bu	3
+1.5.1 CHALLENGES	3
+1.5.2.  ANALYSIS	4
+1.5.3 PROPOSED SOLUTION	4
+1.5.4 EXPECTED BENEFITS.	4
+1.6 Proposed Solution Specifications and Design	4
+1.6.1 Agile Methodology	4
+1.6.2 Requirement Analysis	5
+1.6.2.1 Functional Requirements	5
+1.6.2.2 Non-functional Requirements	5
+1.6.2.3 Hardware Requirements	6
+1.6.2.4 Software Requirements	6
+1.6.2.5 Sprints and Iterations	6
+1.6.2.6 User Stories	6
+1.6.2.7 Continuous Integration and Testing	7
+1.6.2.8 Adaptability to Change	7
+1.6.3 System Design	7
+1.6.3.1 System Architecture Diagram	7
+1.6.3.2 Use Case Diagram	8
+1.6.3.3 Sequence Diagram	9
+1.6.3.4 User Interface Design	9
+1.7. Proposed solution Development	12
+1.7.1 Development Technology and Tools Specifications	12
+1.7.1.1 Software including Programming Language, IDE and runtime	12
+1.7.1.2 Hardware (development/runtime)	13
+1.7.2 Implementation details, Network specs and developed code	13
+1.7.2.1 Network specifications	13
+1.7.2.2 Developed solution and associated code	14
+1.8 SYSTEM TESTING	15
+1.8.1 Unit Test	15
+1.8.2 Integration Testing	15
+1.8.3 System Testing	16
+References	17
+
 1.1. INTRODUCTION
+Field trips form an essential component to experiential learning within computing and cyber security. They provide students with the opportunity to observe how organizations operate in the real world, how technological processes are implemented, and how cyber security principles are applied within practical work environments. For students pursuing a Bachelor of Science in Cyber security, these visits bridge the gap between theoretical course work and industry practices, fostering a deeper understanding of organizational systems, digital operations and security challenges.
 
-Field trips form an essential component of experiential learning within computing and cybersecurity. They provide students with the opportunity to observe how organizations operate in the real world, how technological processes are implemented, and how cybersecurity principles are applied within practical work environments. For students pursuing a Bachelor of Science in Cybersecurity, these visits bridge the gap between theoretical coursework and industry practices, fostering a deeper understanding of organizational systems, digital operations, and security challenges.  
-The purpose of this field trip is to explore the structure, operations, and technological frameworks of a selected firm in the Health Industry. By engaging directly with industry professionals and observing active technological systems, the exercise highlights how organizations deploy, secure, and maintain their digital infrastructure and enables identification of operational challenges and cybersecurity vulnerabilities.  
-This report focuses on KORLE‑BU TEACHING HOSPITAL and specifically examines its IT/Health Information Systems Department. The content is based on observations during the field visit, interactions with technical personnel, and an assessment of the hospital's operational structure and security practices. It provides an overview of the industry, the firm, and the department under study, leading to a detailed analysis of observed challenges and proposed solutions aligned with cybersecurity best practices.
+The purpose of this field trip exercise is to explore the structure, operations, and technological frameworks of a selected firm in the Health Industry. By engaging directly with industry professionals and observing active technological systems, the exercise helps to highlight how organizations deploy, secure and maintain their digital infrastructure. More importantly, it enables the identification of operational challenges and cyber security vulnerabilities.
 
-1.2. INDUSTRY: HEALTH
+This report focuses on KORLE-BU TEACHING HOSPITAL and specifically examines its Information Security and Infrastructure / IT Department. The content presented is based on observations made during the field visit, interactions with technical personnel, and an assessment of the hospital's operational structure and security practices. The report provides an overview of the industry, the firm, and the department understudy, leading to a detailed analysis of challenges observed and proposed solutions aligned with cyber security best practices.
 
-The health industry in Ghana comprises public, private, and faith‑based institutions that together deliver essential medical services. The sector is responsible for disease prevention, diagnosis, treatment, emergency response, maternal and child healthcare, and public health threat management. Health institutions manage patient information, ensuring accurate collection, storage, and protection of medical records and health data to support clinical decisions, continuity of care, and regulatory compliance.
+1.2 INDUSTRY: Health
+The health industry in Ghana comprises public, private, and faith-based institutions that collectively deliver essential medical services to the population. This sector plays vital roles such as disease prevention, diagnosis, treatment, emergency response, maternal and child healthcare, and control of public health threats. In addition, health institutions are responsible for the management of patient information, including the accurate collection, storage, and protection of medical records and health data. Effective data handling supports clinical decision-making, improves service delivery, ensures continuity of care, and helps facilities meet regulatory standards for confidentiality and data security. Overall, the health industry remains central to safeguarding public health while maintaining reliable health information systems that support national development.
 
-1.3. COMPANY: KORLE‑BU TEACHING HOSPITAL
+1.3 COMPANY: Korle-bu Teaching Hospital
+Korle-bu Teaching Hospital is Ghana's largest and premier referral hospital, located in Accra. Established in 1923, it serves as the main teaching hospital for the University of Ghana Medical School and plays a central role in training doctors, nurses, and other health professionals. As a tertiary facility, it provides highly specialized services such as cardiothoracic surgery, renal dialysis, oncology, plastic surgery, and advanced diagnostic care. The hospital also manages a large volume of patient information, ensuring proper handling of medical records for accurate diagnosis, continuity of care, and compliance with data protection standards. Korle-Bu remains a key pillar in Ghana's health system, offering advanced medical care, supporting medical research, and contributing significantly to national healthcare development.
 
-Korle‑Bu Teaching Hospital is Ghana's largest referral hospital and principal teaching hospital for the University of Ghana Medical School. Established in 1923 and located in Accra, it provides highly specialized services including cardiothoracic surgery, dialysis, oncology, and advanced diagnostics. The hospital manages large volumes of patient data and supports research and training across multiple clinical disciplines.
+1.3.1 DEPARTMENT: IT/Health Information Systems
+The IT/Health Information Systems Department is responsible for managing the hospital's technological infrastructure and ensuring the smooth flow of digital information across all units. Their core role is to support clinical and administrative operations by maintaining computer systems, networks, hospital software, and electronic health record platforms. This department ensures that patient data is accurately captured, securely stored, and readily accessible to authorized healthcare professionals. They also implement cyber security measures to protect sensitive health information from breaches, unauthorized access, and data loss. Additionally, the department supports digital services such as telemedicine, diagnostic imaging systems, data analytics, and internal communication platforms. Overall, the IT/Health Information Systems Department plays a vital role in improving efficiency, enhancing patient care, and ensuring compliance with data protection regulations.
 
-1.3.1. DEPARTMENT: IT / HEALTH INFORMATION SYSTEMS DEPARTMENT
+1.4 Operations, Activities and Resources
+Korle-bu Teaching Hospital operates as Ghana's premier tertiary referral and teaching facility, providing advanced clinical care, medical training, and research services to support the country's health system. Some operations include specialized diagnostics, surgical procedures, maternal and child healthcare, emergency services, and the treatment of complex medical conditions referred from across the nation. It undertakes key activities such as clinical service delivery, professional training for medical and allied health students, medical research, and comprehensive health information management, which involves the secure handling of patient data and the use of digital health systems to support accurate decision-making. Korle-bu's resources include a highly skilled workforce of medical specialists, nurses, pharmacists, laboratory professionals, and IT personnel, supported by modern physical and technological assets such as specialized centers, advanced diagnostic equipment, operating theatres, and electronic health record systems. These combined operations, activities, and resources enable the hospital to deliver high-quality healthcare while fulfilling its mandate as a national center of excellence.
 
-The IT/Health Information Systems Department manages the hospital's technology infrastructure and ensures the secure flow of digital information. Its responsibilities include maintaining networks, servers, clinical applications, electronic health record platforms, and implementing cybersecurity measures to protect patient data and hospital systems. The department also supports telemedicine, diagnostic imaging integration, data analytics, and internal communication platforms.
+1.5 Operational Effectiveness and Efficiencies of Korle-bu
+During my field trip to Korle Bu Teaching Hospital, it became evident that the facility demonstrates strong operational effectiveness and efficiency through its well-coordinated clinical services, specialized units, and use of structured health management systems. The hospital's ability to provide advanced medical care is supported by skilled specialists, modern diagnostic equipment, and clearly defined clinical protocols that enhance the accuracy and quality of patient treatment. Efficiency is further improved by the integration of health information systems, which streamline the handling of patient records, reduce waiting times, and facilitate smooth communication across departments. Additionally, the hospital's commitment to continuous professional training, multidisciplinary teamwork, and the organized use of its physical and technological resources contributes to timely service delivery and improved patient outcomes.
 
-1.4. Chosen Company Operations, Activities & Resources
+1.5.1 CHALLENGES
+Korle-bu Teaching Hospital faces several challenges that affect its ability to operate at full efficiency. One of the major issues is the delay in procurement of devices. Delays in procuring medical devices can disrupt hospital operations by slowing down diagnosis, treatment, and essential procedures. Without timely equipment, staff may be forced to use outdated tools, leading to longer waiting times, reduced efficiency, and potential risks to patient safety. These delays can also increase congestion in departments and negatively affect overall healthcare delivery.
 
-Korle‑Bu operates as a tertiary referral and teaching facility delivering advanced clinical care, training and research. Core operations include specialized diagnostics, surgery, emergency services, maternal and child care, and complex case management. Activities include clinical service delivery, professional training, medical research, and health information management. Resources include skilled clinicians, nurses, lab professionals, IT staff, diagnostic equipment, operating theatres, and electronic health record systems.
+1.5.2 ANALYSIS
+Delays in the procurement of medical devices often stem from slow approval processes, limited budgets, supplier issues, and poor coordination between hospital departments. These delays disrupt hospital operations by slowing diagnosis and treatment, increasing patient waiting times, and forcing staff to rely on outdated or inadequate equipment. As a result, overall efficiency and quality of care decline, and the hospital may incur higher costs due to emergency purchases or frequent repairs.
 
-1.5. Operational Effectiveness and Efficiencies of Korle‑Bu
+1.5.3 PROPOSED SOLUTION
+A system to automate the manual procurement workflow for items.
 
-Korle‑Bu demonstrates operational effectiveness through coordinated clinical services, specialized units, and structured health management systems. Integration of digital records reduces duplication and facilitates communication between departments. Continuous professional training and multidisciplinary teamwork contribute to timely service delivery and improved patient outcomes. Within the IT department, routine network management and system administration maintain critical services; however, gaps exist in proactive security monitoring and automation of some administrative workflows (notably procurement), which affect resilience and speed of response to incidents.
+1.5.4 EXPECTED BENEFITS
+Automating the manual procurement process for hospital devices offers several important benefits. It speeds up the approval and ordering stages, reduces human errors, and provides clear tracking of requests in real time. Automation also improves communication between departments, enhances record-keeping for audits, and supports better budgeting. By streamlining workflows and preventing delays in obtaining essential equipment, the system ultimately improves operational efficiency and supports better patient care.
 
-1.5.1. Challenges
+1.6 Proposed Solution Specifications and Design
+The proposed solution is a digital procurement system designed to automate and streamline the process of acquiring medical and IT devices at Korle-bu Teaching Hospital. This system will replace the inefficient manual workflow, providing a transparent, efficient, and accountable platform for all procurement activities, from request initiation to final delivery and approval.
 
-The primary operational challenge observed is delays and inefficiencies in procurement workflows for medical and IT devices, which cause service disruptions when equipment is unavailable. In the IT/security context, a critical challenge is the lack of centralized, real‑time security monitoring (visibility) across network devices, servers, and clinical systems. This leads to a reactive security posture, slow incident detection and response, and increased risk of data breaches or ransomware impacts.
+1.6.1 Agile Methodology
+To ensure the successful development of the procurement automation system, the Agile methodology is selected as the most appropriate approach (Fowler, 2004). Agile is an iterative and flexible project management framework well-suited for developing solutions where requirements may evolve. Its core principles align perfectly with the need to deliver value quickly and adapt to feedback from hospital staff. This approach allows for the system to be developed in small, incremental cycles (sprints), facilitating the rapid delivery of functional components. Agile emphasizes continuous collaboration between the development team and key stakeholders, and this feedback process will be managed using tools like GitHub Projects, which provides Kanban boards to visualize sprint progress and track tasks transparently. The hospital's dynamic environment means that requirements may change, and the Agile approach allows for these adjustments to be incorporated throughout the development process (Sommerville, 2016).
 
-1.5.2. Analysis
+1.6.2 Requirement Analysis
+A thorough requirement analysis defines what the system must do (functional requirements) and the quality standards it must meet (non-functional requirements).
 
-Procurement delays stem from manual processes, paper approvals, and poor tracking; this increases downtime for critical equipment and slows clinical operations. The absence of a SIEM/centralized monitoring capability means logs are dispersed, staff rely on ad‑hoc checks, and correlation of events across systems is manual and slow. These weaknesses raise risk of undetected intrusions and non‑compliance with data protection requirements.
+1.6.2.1 Functional Requirements
+- Role-based access: Requesters (staff), Dept Heads, Procurement Officers, Admins.
+- Submit procurement request with item details, quantity, justification.
+- Review and approve/reject by Dept Head with comments.
+- Procurement officer workflow: generate PO, manage suppliers, mark delivered.
+- Status tracking and notifications for all actors.
+- Audit trail and reporting.
 
-1.5.3. Proposed Solution
+1.6.2.2 Non-functional Requirements
+- Security: encryption in transit and at rest; compliance with Ghana Data Protection Act (Act 843).
+- Reliability: target uptime &gt; 99.9%, automated backups.
+- Performance: UI interactions under 2 seconds.
+- Usability: clear UI, minimal training.
+- Scalability and maintainability.
 
-Implement a digital procurement automation system hosted on GitHub for development and workflow tracking, and implement a Security Information and Event Management (SIEM) solution for real‑time monitoring. This report focuses on completing the procurement system design (primary), with security monitoring integrated into operations planning and future work.
+1.6.2.3 Hardware Requirements
+- Server: modern multicore CPU, 16 GB RAM minimum, 500 GB SSD (or cloud equivalent).
+- Client: standard desktop/laptop/tablet with modern browser.
+
+1.6.2.4 Software Requirements
+- Linux server (Ubuntu), Nginx, Django/React (or chosen stack).
+- PostgreSQL (or planned DB), Git, Docker for deployments.
+
+1.6.2.5 Sprints and Iterations
+- Four two-week sprints: auth + request submission; approvals + PO management; reporting + integrations; UAT + deployment.
+
+1.6.2.6 User Stories
+- As a nurse, submit request quickly.
+- As Dept Head, view pending approvals dashboard.
+- As Procurement Officer, generate and track POs.
+
+1.6.2.7 Continuous Integration and Testing
+- GitHub Actions: lint, unit tests, build on PRs.
+
+1.6.2.8 Adaptability to Change
+- Agile backlog management on GitHub; modular architecture to allow enhancements.
+
+1.6.3 System Design
+A three-tier architecture (Client, Application, Data) with secure integrations to hospital systems and strong auditability.
+
+1.6.3.1 System Architecture Diagram
+(Refer to diagrams/ella_system_architecture.mmd in repo)
+
+1.6.3.2 Use Case Diagram
+(Refer to diagrams/ella_use_case.mmd in repo)
+
+1.6.3.3 Sequence Diagram
+(Refer to diagrams/ella_sequence.mmd in repo)
+
+1.6.3.4 User Interface Design
+Clean, responsive, dashboard-centric UI for staff and approvers with clear status states and notifications.
+
+1.7 Proposed solution Development
+This section describes how the procurement automation system for Korle‑Bu will be developed, the tools and environments to be used, and the delivered code/artefacts. Ella's development emphasizes a JSON-first stack for easier interoperability (FHIR) and quick prototyping.
+
+1.7.1 Development Technology and Tools Specifications
+
+1.7.1.1 Software (programming language, IDE and runtime)
+- Backend: Node.js (Express), or Python/Django if preferred by the hospital; in Ella's prototype the production design is Node.js.
+- Frontend: Vue.js (v3) for a responsive SPA.
+- Database: MongoDB for flexible schema (production) but the classroom demo uses SQLite for simplicity.
+- Dev tools: VS Code, Docker Compose, npm/yarn.
+- Security libs: Helmet, rate limiting, JWT/OAuth2 for auth.
+
+1.7.1.2 Hardware (development and runtime)
+- Dev machines: 8–16 GB RAM, SSD, Docker.
+- Production: app servers (2+ vCPU, 8–16 GB RAM), MongoDB replica set (3 nodes recommended), load balancer (Nginx), secure backup storage.
+
+1.7.2 Implementation details and delivered code
+
+1.7.2.1 Network specifications
+- VLAN segmentation, TLS everywhere, minimal open ports, mutual TLS or OAuth2 for HIS FHIR integration.
+- Nginx or HAProxy for load balancing + health checks.
+
+1.7.2.2 Developed solution and associated code
+- Repository layout: backend/, frontend/, docker-compose.yml, infra/.
+- Core behaviour: submit request -&gt; audit log -&gt; dept head approval -&gt; procurement PO -&gt; delivery confirmation.
+- Audit middleware to persist non-repudiable logs.
+
+1.8 SYSTEM TESTING
+
+1.8.1 Unit Test
+- Use Jest or Mocha for backend; Vue Test Utils + Jest for frontend.
+- Test validation, controllers, and services with in-memory DB where possible.
+
+1.8.2 Integration Testing
+- Test whole flows against staging: ingest -&gt; approval -&gt; PO -&gt; delivery.
+- Use test doubles for HIS (FHIR sandbox) and SMTP.
+
+1.8.3 System Testing
+- UAT with pilot staff, performance/load testing (k6/JMeter), security testing (SAST/DAST), resilience and backup/restore exercises.
+
+References
+Fowler, M. (2004) UML Distilled: A Brief Guide to the Standard Object Modeling Language. 3rd edn. Boston: Addison-Wesley Professional.
+Fowler, M. (2006) Continuous Integration. Available at: https://martinfowler.com/articles/continuousIntegration.html (Accessed: 5 December 2025).
+Government of Ghana (2012) Data Protection Act, 2012 (Act 843). Accra: Ghana Publishing Company.
+Nielsen, J. (1994) 10 Usability Heuristics for User Interface Design. Available at: https://www.nngroup.com/articles/ten-usability-heuristics/ (Accessed: 5 December 2025).
+Sommerville, I. (2016) Software Engineering. 10th edn. Harlow: Pearson Education.
 
 1.5.4. Expected Benefits
 
