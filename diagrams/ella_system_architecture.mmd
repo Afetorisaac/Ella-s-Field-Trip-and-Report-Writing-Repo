@@ -1,0 +1,7 @@
+graph TD
+  Client[Web Browser / Mobile] --> LB[Nginx Load Balancer]
+  LB --> App[Node.js App Servers]
+  App --> DB[(MongoDB Replica Set)]
+  App --> HIS[(Hospital Information System - FHIR)]
+  App --> SMTP[(Mail Relay)]
+  Analyst[IT/Procurement Analyst] --> App
