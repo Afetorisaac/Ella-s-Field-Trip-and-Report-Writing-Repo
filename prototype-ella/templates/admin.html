@@ -1,0 +1,33 @@
+<meta charset="utf-8"><title>Admin Console - Ella Demo</title>
+
+  <h1>Admin Console - Procurement Demo</h1>
+  <h2>Create Request</h2>
+  <form action="/create_request" method="post">
+    <input name="title" placeholder="Request title" required="">
+    <input name="department" placeholder="Department" required="">
+    <input name="requester" placeholder="Requester name" required="">
+    <button type="submit">Create Request</button>
+  </form>
+
+  <h2>Register User</h2>
+  <form action="/register_user" method="post">
+    <input name="name" placeholder="Name" required="">
+    <input name="role" placeholder="Role (DeptHead/Procurement)" required="">
+    <button type="submit">Register</button>
+  </form>
+
+  <h2>Requests</h2>
+  <ul>
+    {% for r in requests %}
+      <li>{{ r[1] }} ({{ r[2] }}) - {{ r[4] }} - <a href="/simulate_send/{{ r[0] }}">Simulate Notify</a></li>
+    {% endfor %}
+  </ul>
+
+  <h2>Users</h2>
+  <ul>
+    {% for u in users %}
+      <li>{{ u[1] }} - {{ u[2] }}</li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="/">Back</a></p>

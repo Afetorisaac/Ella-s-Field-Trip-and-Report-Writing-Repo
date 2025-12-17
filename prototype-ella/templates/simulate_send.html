@@ -1,0 +1,10 @@
+<meta charset="utf-8"><title>Simulate Notification</title>
+
+  <h1>Simulate Notification for: {{ request_title }}</h1>
+  <p>Click a user to simulate notifying them / them performing an action:</p>
+  <ul>
+    {% for u in users %}
+      <li>{{ u[1] }} - <a href="/track/{{ request_id }}/{{ u[0] }}">Simulate Action</a></li>
+    {% endfor %}
+  </ul>
+  <p><a href="/admin">Back</a></p>
